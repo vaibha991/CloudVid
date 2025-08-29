@@ -1,0 +1,68 @@
+
+.video-upload-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(to right, #0f172a, #1e40af); /* Cyber blue */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2); /* subtle glow */
+  color: #f8fafc;
+}
+
+.video-upload-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f8fafc;
+}
+
+.video-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #f8fafc;
+}
+
+.form-input,
+.form-textarea,
+.form-file {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  outline: none;
+  font-size: 16px;
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #94a3b8; /* soft gray-blue placeholder */
+}
+
+.form-button {
+  padding: 12px;
+  background-color: #3b82f6; /* neon blue */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #2563eb;
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
+}

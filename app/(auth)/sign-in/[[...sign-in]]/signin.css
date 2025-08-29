@@ -1,0 +1,78 @@
+/* Background wrapper */
+.html, body{
+  height: 100%;
+  overflow: hidden;
+}
+.clerk-signin-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top right, #0f172a, #1e293b, #334155);
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+}
+/* Title above the card */
+.custom-heading {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.custom-subtext {
+  text-align: center;
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Clerk card styling */
+.custom-signin-card {
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  background: white;
+  outline: black;
+  box-shadow: 0 8px 40px rgb(0, 170, 237);
+  border: 2px solid #3b82f6;
+}
+
+/* Main "Continue" button */
+.custom-primary-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.custom-primary-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Google/GitHub social buttons */
+.custom-social-btn {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  color: #1e293b;
+}
+
+.custom-social-btn:hover {
+  background-color: #e2e8f0;
+}
+
+/* Container spacing */
+.clerk-signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

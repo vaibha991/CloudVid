@@ -1,0 +1,75 @@
+/* Set base page background and font */
+body {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Container for home content */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading style */
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Message when there are no videos */
+.no-videos {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 60px;
+}
+
+/* Video grid layout */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card styling */
+.tilt-card {
+  background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
+  color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
+              0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  padding: 40px 0;
+}

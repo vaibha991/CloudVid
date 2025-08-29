@@ -1,0 +1,210 @@
+/* Layout container */
+.html .body {
+  height: 100%;
+  overflow-x: hidden;
+}
+.drawer {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.drawer-toggle {
+  display: none;
+}
+
+.drawer-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Header/Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #000;
+  color: white;
+
+  /* Stronger visible shadow */
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1),
+              0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.menu-button,
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Avatar */
+.avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.user-email {
+  max-width: 150px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+}
+
+/* Sidebar Drawer */
+.drawer-side {
+  width: 0;
+  transition: width 0.3s ease;
+  background-color: #070707;
+  border-right: 1px solid #334155;
+  overflow-y: auto;
+  color: #e2e8f0;
+  height: 100vh;
+}
+
+.drawer-open .drawer-side {
+  width: 240px;
+}
+
+/* Sidebar layout */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 1rem;
+}
+
+/* Sidebar Header/Logo */
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: #38bdf8;
+}
+
+/* Menu List */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  flex-grow: 1;
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 6px 12px;
+  border-left: 4px solid transparent;
+  border-radius: 0 8px 8px 0;
+  transition: background 0.3s ease, color 0.3s ease, border-left-color 0.3s ease;
+  cursor: pointer;
+  font-size: 15.5px;
+  color: #cbd5e1;
+}
+
+.menu-item:hover {
+  background-color: #1e293b;
+}
+
+.menu-item.active {
+  background-color: #1e293b;
+  color: #3b82f6;
+  font-weight: 500;
+  border-left-color: #3b82f6;
+}
+
+.menu-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Menu Icon */
+.menu-item .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Sign Out */
+.signout-container {
+  padding: 0 1rem 1.25rem;
+}
+
+.signout-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 15.5px;
+  background-color: transparent;
+  color: #cbd5e1;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.signout-btn:hover {
+  background-color: #334155;
+  color: white;
+}
+
+.signout-btn .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Main Content */
+.main-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Link override */
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}

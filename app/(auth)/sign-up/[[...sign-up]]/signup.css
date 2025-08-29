@@ -1,0 +1,134 @@
+/* ===== Reset some default styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body and background styling ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Replaced gradient with the provided background image */
+  background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== Signup form wrapper ===== */
+.signup-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ===== Form heading ===== */
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* ===== Form elements styles ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.4);
+  outline: none;
+}
+
+/* Submit button */
+form button[type="submit"] {
+  padding: 14px 16px;
+  background-color: #2575fc;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #1a52d1;
+}
+
+/* Optional: Link to login page under submit */
+.signup-footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.signup-footer a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.signup-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .signup-container h2 {
+    font-size: 1.5rem;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 12px 14px;
+  }
+}
+
+/* ===== Simple fade-in animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
