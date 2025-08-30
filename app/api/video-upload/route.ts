@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { auth } from "@clerk/nextjs/server";
-import { PrismaClient } from "@/app/generated/prisma";
-
-const prisma = new PrismaClient();
+import { prisma } from "../../lib/prisma";  // ✅ fixed
 
 // Cloudinary Configuration
 cloudinary.config({
@@ -92,7 +90,5 @@ export async function POST(_request: NextRequest) {
   } catch (error) {
     console.error("Upload video failed:", error);
     return NextResponse.json({ error: "Upload video failed" }, { status: 500 });
-  } finally {
-    await prisma.$disconnect();
   }
 }
