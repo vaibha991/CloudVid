@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import {
@@ -12,9 +13,9 @@ import {
   UploadIcon,
   ImageIcon,
 } from "lucide-react";
-import "./AppLayout.css"; // ✅ Correct
+import "./AppLayout.css"; // ✅ Global CSS for layout
 
-
+// Sidebar navigation items
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
   { href: "/social-share", icon: Share2Icon, label: "Social Share" },
@@ -33,7 +34,6 @@ export default function AppLayout({
   const { user } = useUser();
 
   const handleLogoClick = () => router.push("/");
-
   const handleSignOut = async () => await signOut();
 
   return (
@@ -49,23 +49,31 @@ export default function AppLayout({
       <div className="drawer-content">
         <header className="navbar">
           <div className="navbar-left">
+            {/* Menu toggle */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="menu-button"
             >
               <MenuIcon />
             </button>
+
+            {/* Logo */}
             <div className="logo" onClick={handleLogoClick}>
               <Link href="/">Cloudinary Showcase</Link>
             </div>
           </div>
+
+          {/* Right section (user info) */}
           <div className="navbar-right">
             {user && (
               <>
                 <div className="avatar">
-                  <img
+                  <Image
                     src={user.imageUrl}
                     alt={user.username || user.emailAddresses[0].emailAddress}
+                    width={40}
+                    height={40}
+                    className="rounded-full"
                   />
                 </div>
                 <span className="user-email">
@@ -78,6 +86,7 @@ export default function AppLayout({
             )}
           </div>
         </header>
+
         <main className="main-content">{children}</main>
       </div>
 
@@ -87,11 +96,15 @@ export default function AppLayout({
           <div className="sidebar-header">
             <ImageIcon className="logo-icon" />
           </div>
+
+          {/* Sidebar Navigation */}
           <ul className="menu-list">
             {sidebarItems.map((item) => (
               <li
                 key={item.href}
-                className={`menu-item ${pathname === item.href ? "active" : ""}`}
+                className={`menu-item ${
+                  pathname === item.href ? "active" : ""
+                }`}
               >
                 <Link href={item.href} onClick={() => setSidebarOpen(false)}>
                   <item.icon className="icon" />
@@ -100,6 +113,8 @@ export default function AppLayout({
               </li>
             ))}
           </ul>
+
+          {/* Sign Out button at bottom */}
           {user && (
             <div className="signout-container">
               <button className="signout-btn" onClick={handleSignOut}>

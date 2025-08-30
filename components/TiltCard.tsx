@@ -1,21 +1,20 @@
-'use client';
-
-import Tilt from 'react-parallax-tilt';
 import React from 'react';
+import Tilt from 'react-parallax-tilt';
+import './TiltCard.css'; // import your CSS file
 
 interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
 }
 
-const TiltCard = ({ children, className }: TiltCardProps) => {
+const TiltCard: React.FC<TiltCardProps> = ({ children, className }) => {
   return (
     <Tilt
       glareEnable={true}
       glareMaxOpacity={0.25}
       scale={1.05}
       transitionSpeed={250}
-      className={`rounded-xl p-5 bg-gradient-to-br from-[#1f2937] to-[#111827] shadow-xl ${className}`}
+      className={`tilt-card ${className || ''}`}
     >
       {children}
     </Tilt>

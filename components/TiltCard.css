@@ -1,0 +1,7 @@
+.tilt-card {
+    border-radius: 16px; /* rounded-xl */
+    padding: 20px;       /* p-5 */
+    background: linear-gradient(135deg, #1f2937, #111827); /* gradient from Tailwind */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* shadow-xl */
+    transition: transform 0.25s ease-in-out;
+}

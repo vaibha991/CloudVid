@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const videos = await prisma.video.findMany({
       orderBy: { createdAt: "desc" },
@@ -16,4 +16,5 @@ export async function GET(request: NextRequest) {
     );
   }
 }
+
 
