@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useClerk, useUser } from "@clerk/nextjs";
+import { useClerk, useUser, SignInButton } from "@clerk/nextjs";
 import {
   LogOutIcon,
   MenuIcon,
@@ -63,9 +63,9 @@ export default function AppLayout({
             </div>
           </div>
 
-          {/* Right section (user info) */}
+          {/* Right section (user info / sign in) */}
           <div className="navbar-right">
-            {user && (
+            {user ? (
               <>
                 <div className="avatar">
                   <Image
@@ -83,6 +83,10 @@ export default function AppLayout({
                   <LogOutIcon />
                 </button>
               </>
+            ) : (
+              <SignInButton mode="modal">
+                <button className="signin-btn">Sign In</button>
+              </SignInButton>
             )}
           </div>
         </header>

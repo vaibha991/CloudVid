@@ -163,6 +163,26 @@
   flex-shrink: 0;
 }
 
+/* Sign In button */
+/* Special styling only for Sign In button */
+.signin-btn {
+  font-family: "Arial Black", Arial, sans-serif;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.signin-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
 /* Sign Out */
 .signout-container {
   padding: 0 1rem 1.25rem;
