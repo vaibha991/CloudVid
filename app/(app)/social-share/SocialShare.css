@@ -1,36 +1,56 @@
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  color: #f8fafc; /* Light text for dark background */
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f172a; /* Dark cyber background */
+  color: #f8fafc; /* Light text */
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 100%; /* mobile-first */
+  margin: 0 auto;
+  padding: 12px;
+}
+
+/* ===== Page Title ===== */
 .title {
   text-align: center;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
+/* ===== Card ===== */
 .card {
   border-radius: 12px;
-  padding: 24px;
-  background: linear-gradient(135deg, #0f172a, #1e40af); /* Cyber blue glow */
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3); /* subtle glow */
+  padding: 16px;
+  background: linear-gradient(135deg, #0f172a, #1e40af);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* ===== Section Title ===== */
 .section-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  margin: 16px 0;
-  color: #f8fafc; /* Bright text */
+  margin: 12px 0;
+  color: #f8fafc;
 }
 
+/* ===== Form Controls ===== */
 .form-control {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .form-control label {
@@ -39,33 +59,40 @@
   color: #f8fafc;
 }
 
+select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #0f172a;
+  background-color: #1e293b;
+  color: #f8fafc;
+  width: 100%;
+}
+
+/* ===== File Upload Button ===== */
 .custom-file-upload {
   display: inline-block;
-  padding: 12px 20px;
-  background-color: #3b82f6; /* Neon blue */
+  padding: 10px 14px;
+  background-color: #3b82f6;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   margin-top: 10px;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6); /* subtle neon glow */
+  text-align: center;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
 }
 
 .custom-file-upload:hover {
-  background-color: #2563eb; /* Slightly darker blue */
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.9); /* brighter glow on hover */
+  background-color: #2563eb;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.9);
 }
 
-input[type="file"],
-select {
-  padding: 8px;
-  border: 1px solid #0f172a;
-  border-radius: 4px;
-  background-color: #1e293b;
-  color: #f8fafc;
+input[type="file"] {
+  display: none;
 }
 
+/* ===== Progress Bar ===== */
 .progress-bar {
   height: 6px;
   background: #334155;
@@ -93,13 +120,14 @@ select {
   }
 }
 
+/* ===== Preview ===== */
 .preview {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .preview h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 8px;
   color: #f8fafc;
 }
 
@@ -109,38 +137,104 @@ select {
   justify-content: center;
   align-items: center;
   background: #1e293b;
-  padding: 16px;
+  padding: 12px;
   border: 1px dashed #94a3b8;
   border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .spinner {
   position: absolute;
   z-index: 10;
   background: rgba(255, 255, 255, 0.85);
-  padding: 12px 20px;
+  padding: 10px 16px;
   border-radius: 6px;
   font-weight: bold;
   color: #1e293b;
 }
 
+/* ===== Download Button ===== */
 .download-button {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .download-button button {
-  padding: 10px 16px;
+  padding: 8px 12px;
   background-color: #3b82f6;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 14px;
 }
 
 .download-button button:hover {
   background-color: #2563eb;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 24px;
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .preview h3 {
+    font-size: 16px;
+  }
+
+  .download-button button {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 32px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .card {
+    padding: 32px;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .preview h3 {
+    font-size: 18px;
+  }
+
+  .download-button button {
+    padding: 12px 20px;
+    font-size: 18px;
+  }
 }

@@ -1,8 +1,8 @@
-
+/* ===== Container & Base Styles ===== */
 .video-upload-container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 100%; /* mobile-first */
+  margin: 20px auto;
+  padding: 16px;
   background: linear-gradient(to right, #0f172a, #1e40af); /* Cyber blue */
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2); /* subtle glow */
@@ -10,18 +10,19 @@
 }
 
 .video-upload-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
-  color: #f8fafc;
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .video-upload-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
+/* ===== Form Groups ===== */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -33,6 +34,7 @@
   color: #f8fafc;
 }
 
+/* ===== Inputs & Textareas ===== */
 .form-input,
 .form-textarea,
 .form-file {
@@ -50,6 +52,30 @@
   color: #94a3b8; /* soft gray-blue placeholder */
 }
 
+/* ===== Custom File Upload ===== */
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 14px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #2563eb;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.9);
+}
+
+input.form-file {
+  display: none;
+}
+
+/* ===== Submit Button ===== */
 .form-button {
   padding: 12px;
   background-color: #3b82f6; /* neon blue */
@@ -60,9 +86,58 @@
   cursor: pointer;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px;
 }
 
 .form-button:hover {
   background-color: #2563eb;
   box-shadow: 0 0 14px rgba(59, 130, 246, 0.6);
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablet */
+@media (min-width: 768px) {
+  .video-upload-container {
+    max-width: 720px;
+    padding: 24px;
+  }
+
+  .video-upload-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .form-button {
+    padding: 14px;
+    font-size: 18px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .video-upload-container {
+    max-width: 960px;
+    padding: 32px;
+  }
+
+  .video-upload-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .form-button {
+    padding: 16px;
+    font-size: 20px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 18px;
+  }
 }

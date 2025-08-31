@@ -1,8 +1,14 @@
-/* Layout container */
-.html .body {
+/* ===== Base ===== */
+html, body {
   height: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
 }
+
 .drawer {
   display: flex;
   height: 100vh;
@@ -13,6 +19,7 @@
   display: none;
 }
 
+/* ===== Drawer Content ===== */
 .drawer-content {
   flex-grow: 1;
   display: flex;
@@ -20,16 +27,14 @@
   overflow-y: auto;
 }
 
-/* Header/Navbar */
+/* ===== Header/Navbar ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 12px 16px;
   background-color: #000;
   color: white;
-
-  /* Stronger visible shadow */
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1),
               0 2px 8px rgba(0, 0, 0, 0.7);
 }
@@ -43,9 +48,8 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
-
 
 .menu-button,
 .logout-button {
@@ -56,12 +60,12 @@
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Avatar */
+/* ===== Avatar ===== */
 .avatar img {
   width: 32px;
   height: 32px;
@@ -69,15 +73,15 @@
 }
 
 .user-email {
-  max-width: 150px;
-  font-size: 14px;
+  max-width: 120px;
+  font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: white;
 }
 
-/* Sidebar Drawer */
+/* ===== Sidebar ===== */
 .drawer-side {
   width: 0;
   transition: width 0.3s ease;
@@ -89,7 +93,7 @@
 }
 
 .drawer-open .drawer-side {
-  width: 240px;
+  width: 200px; /* smaller for mobile-first */
 }
 
 /* Sidebar layout */
@@ -100,7 +104,6 @@
   padding-top: 1rem;
 }
 
-/* Sidebar Header/Logo */
 .sidebar-header {
   display: flex;
   justify-content: center;
@@ -109,8 +112,8 @@
 }
 
 .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   color: #38bdf8;
 }
 
@@ -122,18 +125,17 @@
   flex-grow: 1;
 }
 
-/* Menu Item */
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  margin: 6px 12px;
+  gap: 10px;
+  padding: 10px 16px;
+  margin: 4px 8px;
   border-left: 4px solid transparent;
   border-radius: 0 8px 8px 0;
   transition: background 0.3s ease, color 0.3s ease, border-left-color 0.3s ease;
   cursor: pointer;
-  font-size: 15.5px;
+  font-size: 14px;
   color: #cbd5e1;
 }
 
@@ -151,29 +153,28 @@
 .menu-item a {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: inherit;
   text-decoration: none;
 }
 
-/* Menu Icon */
 .menu-item .icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
-/* Sign In button */
-/* Special styling only for Sign In button */
+/* ===== Sign In button ===== */
 .signin-btn {
   font-family: "Arial Black", Arial, sans-serif;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 6px;
   background-color: black;
   color: white;
   font-weight: bold;
   border: none;
   cursor: pointer;
+  font-size: 14px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: background-color 0.2s ease-in-out, transform 0.2s ease;
 }
@@ -185,19 +186,19 @@
 
 /* Sign Out */
 .signout-container {
-  padding: 0 1rem 1.25rem;
+  padding: 0 1rem 1rem;
 }
 
 .signout-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
-  font-size: 15.5px;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
   background-color: transparent;
   color: #cbd5e1;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
   transition: background 0.3s ease, color 0.3s ease;
@@ -209,22 +210,77 @@
 }
 
 .signout-btn .icon {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
-/* Main Content */
+/* ===== Main Content ===== */
 .main-content {
-  padding: 24px;
-  max-width: 1200px;
+  padding: 16px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-/* Link override */
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: inherit;
+/* ===== Responsive Media Queries ===== */
+
+/* Small devices (phones) */
+@media (max-width: 639px) {
+  .drawer-open .drawer-side {
+    width: 180px;
+  }
+
+  .navbar {
+    padding: 8px 12px;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .signin-btn, .signout-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .drawer-open .drawer-side {
+    width: 220px;
+  }
+
+  .navbar {
+    padding: 10px 16px;
+  }
+
+  .menu-item {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+  .drawer-open .drawer-side {
+    width: 240px;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .menu-item {
+    font-size: 15.5px;
+    padding: 12px 20px;
+  }
 }

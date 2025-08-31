@@ -55,7 +55,7 @@ const HomePage = () => {
       <div className="home-container">
         <h1 className="heading">Videos</h1>
 
-        {error && <div className="error-message">{error}</div>}
+        {error && <div className="no-videos">{error}</div>}
 
         {videos.length === 0 ? (
           <div className="no-videos">No videos available</div>
@@ -70,6 +70,8 @@ const HomePage = () => {
                 glarePosition="all"
                 scale={1.03}
                 transitionSpeed={2000}
+                tiltMaxAngleX={10} /* Reduced for mobile */
+                tiltMaxAngleY={10} /* Reduced for mobile */
               >
                 <div className="tilt-card">
                   <VideoCard video={video} onDownload={handleDownload} />

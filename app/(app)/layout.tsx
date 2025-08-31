@@ -13,7 +13,7 @@ import {
   UploadIcon,
   ImageIcon,
 } from "lucide-react";
-import "./AppLayout.css"; // ✅ Global CSS for layout
+import "./AppLayout.css"; // Updated responsive CSS
 
 // Sidebar navigation items
 const sidebarItems = [
@@ -59,7 +59,7 @@ export default function AppLayout({
 
             {/* Logo */}
             <div className="logo" onClick={handleLogoClick}>
-              <Link href="/">Cloudinary Showcase</Link>
+              Cloudinary Showcase
             </div>
           </div>
 

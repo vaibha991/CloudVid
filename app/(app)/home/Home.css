@@ -1,4 +1,4 @@
-/* Set base page background and font */
+/* ===== Base Styles ===== */
 body {
   background-color: #000;
   color: white;
@@ -10,16 +10,16 @@ body {
 
 /* Container for home content */
 .home-container {
-  max-width: 1200px;
+  max-width: 100%; /* mobile-first */
   margin: 0 auto;
-  padding: 20px;
+  padding: 16px;
   position: relative;
   z-index: 1;
 }
 
 /* Heading style */
 .heading {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 16px;
   text-align: center;
@@ -28,48 +28,95 @@ body {
 /* Message when there are no videos */
 .no-videos {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: #888;
-  margin-top: 60px;
-}
-
-/* Video grid layout */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-@media (min-width: 640px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Card styling */
-.tilt-card {
-  background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
-  color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tilt-card:hover {
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
-              0 0 10px rgba(59, 130, 246, 0.6);
+  margin-top: 40px;
 }
 
 /* Loading indicator */
 .loading {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   padding: 40px 0;
+}
+
+/* Video grid layout */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile-first: single column */
+  gap: 16px;
+}
+
+/* Tilt Card */
+.tilt-card {
+  background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+              0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+/* Responsive Media Queries */
+
+/* Small tablets / landscape phones */
+@media (min-width: 640px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .tilt-card {
+    padding: 20px;
+  }
+}
+
+/* Desktops / large tablets */
+@media (min-width: 1024px) {
+  .home-container {
+    max-width: 1200px;
+    padding: 24px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .tilt-card {
+    padding: 24px;
+  }
+}
+
+/* Extra-large screens */
+@media (min-width: 1440px) {
+  .home-container {
+    max-width: 1400px;
+    padding: 32px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .tilt-card {
+    padding: 28px;
+  }
 }

@@ -16,15 +16,15 @@ type SocialFormat = keyof typeof socialFormats;
 
 export default function SocialShare() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [selectedFormat, setSelectedFormat] = useState<SocialFormat>("Instagram Square (1:1)");
+  const [selectedFormat, setSelectedFormat] = useState<SocialFormat>(
+    "Instagram Square (1:1)"
+  );
   const [isUploading, setIsUploading] = useState(false);
   const [isTransforming, setIsTransforming] = useState(false);
   const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (uploadedImage) {
-      setIsTransforming(true);
-    }
+    if (uploadedImage) setIsTransforming(true);
   }, [selectedFormat, uploadedImage]);
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +57,7 @@ export default function SocialShare() {
     if (!imageRef.current) return;
 
     fetch(imageRef.current.src)
-      .then((response) => response.blob())
+      .then((res) => res.blob())
       .then((blob) => {
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -81,7 +81,6 @@ export default function SocialShare() {
             <input type="file" onChange={handleFileUpload} hidden />
             📁 Choose Image
           </label>
-
         </div>
 
         {isUploading && (
