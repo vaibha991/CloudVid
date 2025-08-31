@@ -5,7 +5,6 @@ import axios from "axios";
 import Tilt from "react-parallax-tilt";
 import PageTransition from "@/components/PageTransition";
 import VideoCard from "@/components/VideoCard";
-import SolarSystem from "@/components/SolarSystem"; // ✅ Add this line
 import { Video } from "@/types";
 import "./Home.css";
 
@@ -54,9 +53,6 @@ const HomePage = () => {
   return (
     <PageTransition>
       <div className="home-container">
-        {/* ✅ Solar System Animation */}
-        <SolarSystem />
-
         <h1 className="heading">Videos</h1>
 
         {error && <div className="error-message">{error}</div>}
