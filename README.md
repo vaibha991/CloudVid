@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎥 CloudVid
 
-## Getting Started
+A modern **Next.js 15** web application for uploading, managing, and sharing videos.  
+Built with **Clerk authentication**, **Prisma ORM**, **Cloudinary storage**, and a sleek **3D Tilt UI** using Tailwind + Framer Motion.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🔐 **Authentication with Clerk** (Sign in / Sign up / User Avatars)
+- 🎥 **Video Upload & Management** (via Cloudinary)
+- 📂 **Dashboard-style Layout** (Sidebar + Header)
+- 🎨 **3D Tilt Cards** (`react-parallax-tilt`)
+- ✨ **Smooth Page Transitions** (`framer-motion`)
+- 📱 **Fully Responsive** (mobile-first with Tailwind CSS)
+- 🌐 **Deployed on Vercel**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Frontend:** Next.js 15 (App Router), React 18
+- **Styling:** Tailwind CSS, DaisyUI, custom CSS
+- **Auth:** Clerk
+- **Database:** PostgreSQL (via Prisma ORM + NeonDB)
+- **Storage:** Cloudinary
+- **Animations:** Framer Motion, react-parallax-tilt
+- **Deployment:** Vercel
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Installation & Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/<your-username>/cloudvid.git
+   cd cloudvid
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
